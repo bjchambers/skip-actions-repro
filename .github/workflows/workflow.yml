@@ -20,4 +20,4 @@ jobs:
     if: needs.prejob.outputs.should_skip != 'true'
     steps:
       # This always fails after 60 seconds.
-      - sleep 60 || false
+      - run: sleep 60 || false
