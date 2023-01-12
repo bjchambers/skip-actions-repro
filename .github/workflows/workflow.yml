@@ -17,7 +17,7 @@ jobs:
           do_not_skip: '["workflow_dispatch", "schedule"]'
   job:
     needs: prejob
+    runs-on: ubuntu-latest
     if: needs.prejob.outputs.should_skip != 'true'
     steps:
-      # This always fails after 60 seconds.
-      - run: sleep 60 || false
+      - run: false
